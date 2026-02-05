@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genuary 2026 - Tous les Prompts</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .slider-container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .slider-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .slider-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .slider-btn {
+            padding: 8px 16px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .slider-btn:hover:not(:disabled) {
+            background: #5568d3;
+        }
+        .slider-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .day-indicator {
+            font-weight: bold;
+            padding: 8px 12px;
+            background: #f0f0f0;
+            border-radius: 6px;
+        }
+        .slider-frame-container {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+        }
+        .slider-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: none;
+        }
+        .slider-frame.active {
+            display: block;
+        }
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+            border: none;
+            cursor: pointer;
+        }
+        .slider-dot.active {
+            background: #667eea;
+            width: 12px;
+            height: 12px;
+        }
+        .prompts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .prompt-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .prompt-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .prompt-number {
+            font-size: 20px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+        .prompt-title {
+            font-size: 15px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .prompt-credit {
+            font-size: 12px;
+            color: #666;
+            font-style: italic;
+        }
+        @media (max-width: 768px) {
+            .slider-frame-container {
+                height: 400px;
+            }
+            .prompts-grid {
+                grid-template-columns: 1fr;
+            }
+            .slider-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Genuary 2026 - Tous les Prompts</h1>
+        
+        <div class="slider-container">
+            <div class="slider-header">
+                <div style="font-weight: bold;">Résultats des sketches</div>
+                <div class="slider-controls">
+                    <button class="slider-btn" id="prevBtn" onclick="changeDay(-1)">←</button>
+                    <div class="day-indicator" id="dayIndicator">JAN. 1</div>
+                    <button class="slider-btn" id="nextBtn" onclick="changeDay(1)">→</button>
+                </div>
+            </div>
+            <div class="slider-frame-container">
+                <iframe class="slider-frame active" id="frame1" src="prompts/jan-01.html"></iframe>
+                <iframe class="slider-frame" id="frame2" src="prompts/jan-02.html"></iframe>
+                <iframe class="slider-frame" id="frame3" src="prompts/jan-03.html"></iframe>
+                <iframe class="slider-frame" id="frame4" src="prompts/jan-04.html"></iframe>
+                <iframe class="slider-frame" id="frame5" src="prompts/jan-05.html"></iframe>
+                <iframe class="slider-frame" id="frame6" src="prompts/jan-06.html"></iframe>
+                <iframe class="slider-frame" id="frame7" src="prompts/jan-07.html"></iframe>
+                <iframe class="slider-frame" id="frame8" src="prompts/jan-08.html"></iframe>
+                <iframe class="slider-frame" id="frame9" src="prompts/jan-09.html"></iframe>
+                <iframe class="slider-frame" id="frame10" src="prompts/jan-10.html"></iframe>
+                <iframe class="slider-frame" id="frame11" src="prompts/jan-11.html"></iframe>
+                <iframe class="slider-frame" id="frame12" src="prompts/jan-12.html"></iframe>
+                <iframe class="slider-frame" id="frame13" src="prompts/jan-13.html"></iframe>
+                <iframe class="slider-frame" id="frame14" src="prompts/jan-14.html"></iframe>
+                <iframe class="slider-frame" id="frame15" src="prompts/jan-15.html"></iframe>
+                <iframe class="slider-frame" id="frame16" src="prompts/jan-16.html"></iframe>
+                <iframe class="slider-frame" id="frame17" src="prompts/jan-17.html"></iframe>
+                <iframe class="slider-frame" id="frame18" src="prompts/jan-18.html"></iframe>
+                <iframe class="slider-frame" id="frame19" src="prompts/jan-19.html"></iframe>
+                <iframe class="slider-frame" id="frame20" src="prompts/jan-20.html"></iframe>
+                <iframe class="slider-frame" id="frame21" src="prompts/jan-21.html"></iframe>
+                <iframe class="slider-frame" id="frame22" src="prompts/jan-22.html"></iframe>
+                <iframe class="slider-frame" id="frame23" src="prompts/jan-23.html"></iframe>
+                <iframe class="slider-frame" id="frame24" src="prompts/jan-24.html"></iframe>
+                <iframe class="slider-frame" id="frame25" src="prompts/jan-25.html"></iframe>
+                <iframe class="slider-frame" id="frame26" src="prompts/jan-26.html"></iframe>
+                <iframe class="slider-frame" id="frame27" src="prompts/jan-27.html"></iframe>
+                <iframe class="slider-frame" id="frame28" src="prompts/jan-28.html"></iframe>
+                <iframe class="slider-frame" id="frame29" src="prompts/jan-29.html"></iframe>
+                <iframe class="slider-frame" id="frame30" src="prompts/jan-30.html"></iframe>
+                <iframe class="slider-frame" id="frame31" src="prompts/jan-31.html"></iframe>
+            </div>
+            <div class="slider-nav" id="sliderNav"></div>
+        </div>
+
+        <div class="prompts-grid">
+            <a href="prompts/jan-01.html" class="prompt-card">
+                <div class="prompt-number">JAN. 1</div>
+                <div class="prompt-title">One color, one shape.</div>
+                <div class="prompt-credit">Credit: Piero</div>
+            </a>
+            <a href="prompts/jan-02.html" class="prompt-card">
+                <div class="prompt-number">JAN. 2</div>
+                <div class="prompt-title">Twelve principles of animation.</div>
+                <div class="prompt-credit">Credit: Anna Lucia</div>
+            </a>
+            <a href="prompts/jan-03.html" class="prompt-card">
+                <div class="prompt-number">JAN. 3</div>
+                <div class="prompt-title">Fibonacci forever. Create a work that uses the Fibonacci sequence in some way.</div>
+                <div class="prompt-credit">Credit: PaoloCurtoni</div>
+            </a>
+            <a href="prompts/jan-04.html" class="prompt-card">
+                <div class="prompt-number">JAN. 4</div>
+                <div class="prompt-title">Lowres. An image or graphic with low resolution, where details are simplified or pixelated.</div>
+                <div class="prompt-credit">Credit: Manuel Larino</div>
+            </a>
+            <a href="prompts/jan-05.html" class="prompt-card">
+                <div class="prompt-number">JAN. 5</div>
+                <div class="prompt-title">Write "Genuary". Avoid using a font.</div>
+                <div class="prompt-credit">Credit: Piero</div>
+            </a>
+            <a href="prompts/jan-06.html" class="prompt-card">
+                <div class="prompt-number">JAN. 6</div>
+                <div class="prompt-title">Lights on/off. Make something that changes when you switch on or off the "digital" lights.</div>
+                <div class="prompt-credit">Credit: George Henry Rowe</div>
+            </a>
+            <a href="prompts/jan-07.html" class="prompt-card">
+                <div class="prompt-number">JAN. 7</div>
+                <div class="prompt-title">Boolean algebra. Get inspired by Boolean algebra, in any way.</div>
+                <div class="prompt-credit">Credit: PaoloCurtoni</div>
+            </a>
+            <a href="prompts/jan-08.html" class="prompt-card">
+                <div class="prompt-number">JAN. 8</div>
+                <div class="prompt-title">A City. Create a generative metropolis.</div>
+                <div class="prompt-credit">Credit: PaoloCurtoni</div>
+            </a>
+            <a href="prompts/jan-09.html" class="prompt-card">
+                <div class="prompt-number">JAN. 9</div>
+                <div class="prompt-title">Crazy automaton. Cellular automata with crazy rules.</div>
+                <div class="prompt-credit">Credit: PaoloCurtoni</div>
+            </a>
+            <a href="prompts/jan-10.html" class="prompt-card">
+                <div class="prompt-number">JAN. 10</div>
+                <div class="prompt-title">Polar coordinates.</div>
+                <div class="prompt-credit">Credit: Sophia (fractal kitty)</div>
+            </a>
+            <a href="prompts/jan-11.html" class="prompt-card">
+                <div class="prompt-number">JAN. 11</div>
+                <div class="prompt-title">Quine. A Quine is a form of code poetry, it's a computer program that outputs exactly its own source code.</div>
+                <div class="prompt-credit">Credit: Manuel Larino</div>
+            </a>
+            <a href="prompts/jan-12.html" class="prompt-card">
+                <div class="prompt-number">JAN. 12</div>
+                <div class="prompt-title">Boxes only.</div>
+                <div class="prompt-credit">Credit: Stranger in the Q</div>
+            </a>
+            <a href="prompts/jan-13.html" class="prompt-card">
+                <div class="prompt-number">JAN. 13</div>
+                <div class="prompt-title">Self portrait. For example, get started with a very basic human face, a few circles or oval shapes.</div>
+                <div class="prompt-credit">Credit: Jos Vromans</div>
+            </a>
+            <a href="prompts/jan-14.html" class="prompt-card">
+                <div class="prompt-number">JAN. 14</div>
+                <div class="prompt-title">Everything fits perfectly.</div>
+                <div class="prompt-credit">Credit: Roni</div>
+            </a>
+            <a href="prompts/jan-15.html" class="prompt-card">
+                <div class="prompt-number">JAN. 15</div>
+                <div class="prompt-title">Create an invisible object where only the shadows can be seen.</div>
+                <div class="prompt-credit">Credit: P1xelboy</div>
+            </a>
+            <a href="prompts/jan-16.html" class="prompt-card">
+                <div class="prompt-number">JAN. 16</div>
+                <div class="prompt-title">Order and disorder.</div>
+                <div class="prompt-credit">Credit: Ivan Dianov</div>
+            </a>
+            <a href="prompts/jan-17.html" class="prompt-card">
+                <div class="prompt-number">JAN. 17</div>
+                <div class="prompt-title">Wallpaper group. There are only 17 ways to cover a plane with a repeating pattern.</div>
+                <div class="prompt-credit">Credit: Ivan Dianov</div>
+            </a>
+            <a href="prompts/jan-18.html" class="prompt-card">
+                <div class="prompt-number">JAN. 18</div>
+                <div class="prompt-title">Unexpected path. Draw a route that changes direction based on one very simple rule.</div>
+                <div class="prompt-credit">Credit: Baret LaVida</div>
+            </a>
+            <a href="prompts/jan-19.html" class="prompt-card">
+                <div class="prompt-number">JAN. 19</div>
+                <div class="prompt-title">16x16</div>
+                <div class="prompt-credit">Credit: Jos Vromans</div>
+            </a>
+            <a href="prompts/jan-20.html" class="prompt-card">
+                <div class="prompt-number">JAN. 20</div>
+                <div class="prompt-title">One line. An artwork that is made of a single line only.</div>
+                <div class="prompt-credit">Credit: Jos Vromans</div>
+            </a>
+            <a href="prompts/jan-21.html" class="prompt-card">
+                <div class="prompt-number">JAN. 21</div>
+                <div class="prompt-title">Bauhaus Poster. Create a poster design inspired by the German art school Bauhaus.</div>
+                <div class="prompt-credit">Credit: Piero</div>
+            </a>
+            <a href="prompts/jan-22.html" class="prompt-card">
+                <div class="prompt-number">JAN. 22</div>
+                <div class="prompt-title">Pen plotter ready.</div>
+                <div class="prompt-credit">Credit: Sophia (fractal kitty)</div>
+            </a>
+            <a href="prompts/jan-23.html" class="prompt-card">
+                <div class="prompt-number">JAN. 23</div>
+                <div class="prompt-title">Transparency. Explore the concept of transparency.</div>
+                <div class="prompt-credit">Credit: PaoloCurtoni</div>
+            </a>
+            <a href="prompts/jan-24.html" class="prompt-card">
+                <div class="prompt-number">JAN. 24</div>
+                <div class="prompt-title">Perfectionist's nightmare.</div>
+                <div class="prompt-credit">Credit: Sophia (fractal kitty)</div>
+            </a>
+            <a href="prompts/jan-25.html" class="prompt-card">
+                <div class="prompt-number">JAN. 25</div>
+                <div class="prompt-title">Organic Geometry. Forms that look or act organic but are constructed entirely from geometric shapes.</div>
+                <div class="prompt-credit">Credit: Manuel Larino</div>
+            </a>
+            <a href="prompts/jan-26.html" class="prompt-card">
+                <div class="prompt-number">JAN. 26</div>
+                <div class="prompt-title">Recursive Grids. Split the canvas into a grid of some kind and recurse on each cell again and again.</div>
+                <div class="prompt-credit">Credit: Piero</div>
+            </a>
+            <a href="prompts/jan-27.html" class="prompt-card">
+                <div class="prompt-number">JAN. 27</div>
+                <div class="prompt-title">Lifeform. A shape or structure that behaves as if it's alive or growing.</div>
+                <div class="prompt-credit">Credit: Manuel Larino</div>
+            </a>
+            <a href="prompts/jan-28.html" class="prompt-card">
+                <div class="prompt-number">JAN. 28</div>
+                <div class="prompt-title">No libraries, no canvas, only HTML elements.</div>
+                <div class="prompt-credit">Credit: Piero</div>
+            </a>
+            <a href="prompts/jan-29.html" class="prompt-card">
+                <div class="prompt-number">JAN. 29</div>
+                <div class="prompt-title">Genetic evolution and mutation.</div>
+                <div class="prompt-credit">Credit: Monokai</div>
+            </a>
+            <a href="prompts/jan-30.html" class="prompt-card">
+                <div class="prompt-number">JAN. 30</div>
+                <div class="prompt-title">Its not a bug, its a feature.</div>
+                <div class="prompt-credit">Credit: Bart Simons</div>
+            </a>
+            <a href="prompts/jan-31.html" class="prompt-card">
+                <div class="prompt-number">JAN. 31</div>
+                <div class="prompt-title">GLSL day. Create an artwork using only shaders.</div>
+                <div class="prompt-credit">Credit: Piero</div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        let currentDay = 1;
+        const totalDays = 31;
+
+        const sliderNav = document.getElementById('sliderNav');
+        for (let i = 1; i <= totalDays; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'slider-dot' + (i === 1 ? ' active' : '');
+            dot.onclick = () => goToDay(i);
+            sliderNav.appendChild(dot);
+        }
+
+        function updateSlider() {
+            for (let i = 1; i <= totalDays; i++) {
+                const frame = document.getElementById('frame' + i);
+                frame.classList.toggle('active', i === currentDay);
+            }
+            document.getElementById('dayIndicator').textContent = `JAN. ${currentDay}`;
+            document.getElementById('prevBtn').disabled = currentDay === 1;
+            document.getElementById('nextBtn').disabled = currentDay === totalDays;
+            document.querySelectorAll('.slider-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i + 1 === currentDay);
+            });
+        }
+
+        function changeDay(direction) {
+            const newDay = currentDay + direction;
+            if (newDay >= 1 && newDay <= totalDays) {
+                currentDay = newDay;
+                updateSlider();
+            }
+        }
+
+        function goToDay(day) {
+            currentDay = day;
+            updateSlider();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeDay(-1);
+            if (e.key === 'ArrowRight') changeDay(1);
+        });
+
+        updateSlider();
+    </script>
+</body>
+</html>
