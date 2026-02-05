@@ -3,161 +3,536 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genuary 2026 - Tous les Prompts</title>
+    <title>✨🌸 Genuary 2026 - Tous les Prompts UwU 🌸✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; }
+        :root {
+            --pink-light: #ffd6e0;
+            --pink-medium: #ffacc7;
+            --pink-dark: #ff6b9d;
+            --pink-hot: #ff4d8d;
+            --lavender: #e8d5f2;
+            --mint: #c5f0e8;
+            --peach: #ffd4b8;
+            --yellow: #fff5ba;
+            --white: #fffcfd;
+            --text-dark: #5c4d5e;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
-            font-family: system-ui, -apple-system, sans-serif;
-            background: #f5f5f5;
+            font-family: 'Quicksand', 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, var(--pink-light) 0%, var(--lavender) 25%, var(--mint) 50%, var(--peach) 75%, var(--pink-light) 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
             padding: 20px;
-            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
         }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body::before {
+            content: "💖 ✨ 🌸 ⭐ 💕 🎀 💗 ✿ 🌟 💝 ♡ 🌺 ✧ 💖 ✨ 🌸 ⭐ 💕 🎀 💗 ✿ 🌟 💝 ♡ 🌺 ✧";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300%;
+            height: 100%;
+            font-size: 2.5rem;
+            opacity: 0.1;
+            pointer-events: none;
+            animation: floatEmoji 40s linear infinite;
+            white-space: nowrap;
+            line-height: 5rem;
+            z-index: 0;
+        }
+
+        @keyframes floatEmoji {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-33%) translateY(-30px); }
+        }
+
+        .sparkles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(circle, #fff 0%, rgba(255,182,193,0.8) 40%, transparent 70%);
+            border-radius: 50%;
+            animation: sparkleAnim 2s ease-in-out infinite;
+        }
+
+        @keyframes sparkleAnim {
+            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+        }
+
+        .decoration {
+            position: fixed;
+            font-size: 3rem;
+            opacity: 0.5;
+            animation: floatAround 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+            filter: drop-shadow(0 0 10px rgba(255,107,157,0.5));
+        }
+
+        .decoration:nth-child(1) { top: 5%; left: 3%; animation-delay: 0s; }
+        .decoration:nth-child(2) { top: 15%; right: 5%; animation-delay: -1s; }
+        .decoration:nth-child(3) { top: 50%; left: 2%; animation-delay: -2s; }
+        .decoration:nth-child(4) { top: 70%; right: 3%; animation-delay: -3s; }
+        .decoration:nth-child(5) { top: 85%; left: 5%; animation-delay: -4s; }
+        .decoration:nth-child(6) { top: 30%; right: 2%; animation-delay: -5s; }
+
+        @keyframes floatAround {
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+            25% { transform: translateY(-25px) rotate(15deg) scale(1.1); }
+            50% { transform: translateY(0) rotate(0deg) scale(1); }
+            75% { transform: translateY(25px) rotate(-15deg) scale(0.9); }
+        }
+
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
+
         h1 {
             text-align: center;
-            color: #333;
-            margin-bottom: 30px;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 3.5rem;
+            color: var(--pink-hot);
+            text-shadow: 
+                3px 3px 0 var(--white),
+                -2px -2px 0 var(--white),
+                4px 4px 15px rgba(255,107,157,0.4);
+            margin-bottom: 10px;
+            animation: titleBounce 2s ease-in-out infinite;
         }
+
+        @keyframes titleBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        h1::before { content: "✨🌸 "; }
+        h1::after { content: " 🌸✨"; }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .subtitle::before { content: "~nyaa~ "; }
+        .subtitle::after { content: " UwU"; }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--pink-light) 100%);
+            color: var(--pink-hot);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            border: 3px solid var(--pink-medium);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255,172,199,0.4);
+        }
+
+        .nav-link::before { content: "💖 "; }
+        .nav-link::after { content: " 💖"; }
+
+        .nav-link:hover {
+            background: linear-gradient(135deg, var(--pink-hot) 0%, var(--pink-dark) 100%);
+            color: var(--white);
+            transform: translateY(-5px) rotate(-2deg) scale(1.05);
+            box-shadow: 0 10px 30px rgba(255,107,157,0.5);
+        }
+
         .slider-container {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,214,224,0.9) 100%);
+            border-radius: 35px;
+            padding: 25px;
+            margin-bottom: 40px;
+            border: 5px solid var(--pink-medium);
+            box-shadow: 
+                0 20px 60px rgba(255,107,157,0.3),
+                inset 0 0 40px rgba(255,255,255,0.5),
+                0 0 0 3px var(--white);
+            position: relative;
         }
+
+        .slider-container::before {
+            content: "🎀 Galerie Kawaii 🎀";
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--pink-hot), var(--pink-dark));
+            color: var(--white);
+            padding: 8px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 3px solid var(--white);
+            box-shadow: 0 5px 15px rgba(255,107,157,0.4);
+        }
+
         .slider-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin: 20px 0 20px 0;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
         }
+
+        .slider-title {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.5rem;
+            color: var(--pink-hot);
+        }
+
+        .slider-title::before { content: "✨ "; }
+        .slider-title::after { content: " ✨"; }
+
         .slider-controls {
             display: flex;
-            gap: 10px;
+            gap: 15px;
             align-items: center;
         }
+
         .slider-btn {
-            padding: 8px 16px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 6px;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, var(--pink-hot) 0%, var(--pink-dark) 100%);
+            color: var(--white);
+            border: 3px solid var(--white);
+            border-radius: 25px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 1.2rem;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255,107,157,0.4);
         }
+
         .slider-btn:hover:not(:disabled) {
-            background: #5568d3;
+            transform: scale(1.15) rotate(-5deg);
+            box-shadow: 0 10px 25px rgba(255,107,157,0.5);
         }
+
         .slider-btn:disabled {
-            background: #ccc;
+            background: linear-gradient(135deg, #ddd 0%, #bbb 100%);
             cursor: not-allowed;
+            transform: none;
         }
+
+        .slider-btn:active:not(:disabled) {
+            transform: scale(0.95);
+        }
+
         .day-indicator {
-            font-weight: bold;
-            padding: 8px 12px;
-            background: #f0f0f0;
-            border-radius: 6px;
+            font-family: 'Patrick Hand', cursive;
+            font-weight: 700;
+            font-size: 1.4rem;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, var(--yellow) 0%, var(--peach) 100%);
+            border-radius: 20px;
+            color: var(--pink-hot);
+            border: 3px solid var(--pink-medium);
+            box-shadow: 0 5px 15px rgba(255,172,199,0.3);
+            animation: indicatorPulse 2s ease-in-out infinite;
         }
+
+        @keyframes indicatorPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .day-indicator::before { content: "🌟 "; }
+        .day-indicator::after { content: " 🌟"; }
+
         .slider-frame-container {
             width: 100%;
-            height: 600px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            height: 550px;
+            border: 5px solid var(--pink-medium);
+            border-radius: 25px;
             overflow: hidden;
-            background: #000;
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d1f3d 100%);
+            box-shadow: 
+                inset 0 0 30px rgba(0,0,0,0.3),
+                0 10px 30px rgba(255,107,157,0.2);
+            position: relative;
         }
+
+        .slider-frame-container::before {
+            content: "♡";
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            z-index: 10;
+            animation: heartFloat 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 5px rgba(255,107,157,0.8));
+        }
+
+        @keyframes heartFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.2); }
+        }
+
         .slider-frame {
             width: 100%;
             height: 100%;
             border: none;
             display: none;
         }
+
         .slider-frame.active {
             display: block;
         }
+
         .slider-nav {
             display: flex;
             justify-content: center;
-            gap: 6px;
-            margin-top: 15px;
+            gap: 8px;
+            margin-top: 20px;
             flex-wrap: wrap;
+            padding: 15px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 20px;
         }
+
         .slider-dot {
-            width: 10px;
-            height: 10px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
-            background: #ccc;
-            border: none;
+            background: linear-gradient(135deg, var(--pink-light) 0%, var(--lavender) 100%);
+            border: 3px solid var(--pink-medium);
             cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
         }
+
+        .slider-dot:hover {
+            transform: scale(1.3);
+            background: var(--pink-medium);
+        }
+
         .slider-dot.active {
-            background: #667eea;
-            width: 12px;
-            height: 12px;
+            background: linear-gradient(135deg, var(--pink-hot) 0%, var(--pink-dark) 100%);
+            width: 22px;
+            height: 22px;
+            border-color: var(--white);
+            box-shadow: 0 0 15px rgba(255,107,157,0.6);
+            animation: dotPulse 1s ease-in-out infinite;
         }
+
+        @keyframes dotPulse {
+            0%, 100% { box-shadow: 0 0 15px rgba(255,107,157,0.6); }
+            50% { box-shadow: 0 0 25px rgba(255,107,157,0.9); }
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 2.5rem;
+            color: var(--pink-hot);
+            margin: 40px 0 30px;
+            text-shadow: 2px 2px 0 var(--white);
+        }
+
+        .section-title::before { content: "🌸 "; }
+        .section-title::after { content: " 🌸"; }
+
         .prompts-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
         }
+
         .prompt-card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(255,214,224,0.95) 100%);
+            border: 4px solid var(--pink-medium);
+            border-radius: 25px;
+            padding: 25px;
             text-decoration: none;
-            color: #333;
-            transition: transform 0.2s, box-shadow 0.2s;
+            color: var(--text-dark);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 8px 25px rgba(255,172,199,0.3);
+            position: relative;
+            overflow: hidden;
         }
+
+        .prompt-card::before {
+            content: "✨";
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 5rem;
+            opacity: 0.1;
+            transition: all 0.3s ease;
+        }
+
+        .prompt-card::after {
+            content: "♡";
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.2rem;
+            opacity: 0.5;
+            animation: cardHeart 2s ease-in-out infinite;
+        }
+
+        @keyframes cardHeart {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+
         .prompt-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-15px) rotate(-2deg) scale(1.03);
+            box-shadow: 
+                0 20px 40px rgba(255,107,157,0.4),
+                0 0 0 3px var(--pink-hot);
+            border-color: var(--pink-hot);
         }
+
+        .prompt-card:hover::before {
+            opacity: 0.3;
+            transform: rotate(20deg);
+        }
+
         .prompt-number {
-            font-size: 20px;
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 8px;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--pink-hot);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
+
+        .prompt-number::before {
+            content: "🎀";
+            font-size: 1.2rem;
+        }
+
         .prompt-title {
-            font-size: 15px;
-            margin-bottom: 8px;
-            line-height: 1.4;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            color: var(--text-dark);
+            font-weight: 600;
         }
+
         .prompt-credit {
-            font-size: 12px;
-            color: #666;
+            font-size: 0.95rem;
+            color: var(--pink-dark);
             font-style: italic;
+            font-weight: 500;
+            padding-top: 10px;
+            border-top: 2px dashed var(--pink-light);
         }
+
+        .prompt-credit::before { content: "💖 "; }
+
+        /* Cute cursor */
+        body {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E🌸%3C/text%3E%3C/svg%3E"), auto;
+        }
+
+        .slider-btn, .slider-dot, .prompt-card, .nav-link, a {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E💖%3C/text%3E%3C/svg%3E"), pointer;
+        }
+
+        ::selection {
+            background: var(--pink-medium);
+            color: var(--white);
+        }
+
+        /* Scrollbar kawaii */
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--pink-light);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--pink-medium), var(--pink-hot));
+            border-radius: 10px;
+            border: 3px solid var(--pink-light);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--pink-hot), var(--pink-dark));
+        }
+
         @media (max-width: 768px) {
-            .slider-frame-container {
-                height: 400px;
-            }
-            .prompts-grid {
-                grid-template-columns: 1fr;
-            }
-            .slider-header {
-                flex-direction: column;
-            }
+            h1 { font-size: 2.2rem; }
+            .slider-frame-container { height: 400px; }
+            .prompts-grid { grid-template-columns: 1fr; }
+            .slider-header { flex-direction: column; text-align: center; }
+            .decoration { display: none; }
+            .slider-container::before { font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
+    <!-- Cute floating decorations -->
+    <div class="decoration">🌸</div>
+    <div class="decoration">💖</div>
+    <div class="decoration">✨</div>
+    <div class="decoration">🎀</div>
+    <div class="decoration">⭐</div>
+    <div class="decoration">🌺</div>
+
+    <!-- Sparkles container -->
+    <div class="sparkles" id="sparkles"></div>
+
     <div class="container">
-        <h1>Genuary 2026 - Tous les Prompts</h1>
-        
+        <h1>Genuary 2026</h1>
+        <p class="subtitle">Tous les prompts du challenge créatif</p>
+
+        <div class="nav-links">
+            <a href="chat_bot.html" class="nav-link">Parler au Bot UwU</a>
+        </div>
+
         <div class="slider-container">
             <div class="slider-header">
-                <div style="font-weight: bold;">Résultats des sketches</div>
+                <div class="slider-title">Résultats des sketches</div>
                 <div class="slider-controls">
-                    <button class="slider-btn" id="prevBtn" onclick="changeDay(-1)">←</button>
+                    <button class="slider-btn" id="prevBtn" onclick="changeDay(-1)">◀ Précédent</button>
                     <div class="day-indicator" id="dayIndicator">JAN. 1</div>
-                    <button class="slider-btn" id="nextBtn" onclick="changeDay(1)">→</button>
+                    <button class="slider-btn" id="nextBtn" onclick="changeDay(1)">Suivant ▶</button>
                 </div>
             </div>
             <div class="slider-frame-container">
@@ -196,166 +571,56 @@
             <div class="slider-nav" id="sliderNav"></div>
         </div>
 
+        <h2 class="section-title">Tous les prompts</h2>
+
         <div class="prompts-grid">
-            <a href="prompts/jan-01.html" class="prompt-card">
-                <div class="prompt-number">JAN. 1</div>
-                <div class="prompt-title">One color, one shape.</div>
-                <div class="prompt-credit">Credit: Piero</div>
-            </a>
-            <a href="prompts/jan-02.html" class="prompt-card">
-                <div class="prompt-number">JAN. 2</div>
-                <div class="prompt-title">Twelve principles of animation.</div>
-                <div class="prompt-credit">Credit: Anna Lucia</div>
-            </a>
-            <a href="prompts/jan-03.html" class="prompt-card">
-                <div class="prompt-number">JAN. 3</div>
-                <div class="prompt-title">Fibonacci forever. Create a work that uses the Fibonacci sequence in some way.</div>
-                <div class="prompt-credit">Credit: PaoloCurtoni</div>
-            </a>
-            <a href="prompts/jan-04.html" class="prompt-card">
-                <div class="prompt-number">JAN. 4</div>
-                <div class="prompt-title">Lowres. An image or graphic with low resolution, where details are simplified or pixelated.</div>
-                <div class="prompt-credit">Credit: Manuel Larino</div>
-            </a>
-            <a href="prompts/jan-05.html" class="prompt-card">
-                <div class="prompt-number">JAN. 5</div>
-                <div class="prompt-title">Write "Genuary". Avoid using a font.</div>
-                <div class="prompt-credit">Credit: Piero</div>
-            </a>
-            <a href="prompts/jan-06.html" class="prompt-card">
-                <div class="prompt-number">JAN. 6</div>
-                <div class="prompt-title">Lights on/off. Make something that changes when you switch on or off the "digital" lights.</div>
-                <div class="prompt-credit">Credit: George Henry Rowe</div>
-            </a>
-            <a href="prompts/jan-07.html" class="prompt-card">
-                <div class="prompt-number">JAN. 7</div>
-                <div class="prompt-title">Boolean algebra. Get inspired by Boolean algebra, in any way.</div>
-                <div class="prompt-credit">Credit: PaoloCurtoni</div>
-            </a>
-            <a href="prompts/jan-08.html" class="prompt-card">
-                <div class="prompt-number">JAN. 8</div>
-                <div class="prompt-title">A City. Create a generative metropolis.</div>
-                <div class="prompt-credit">Credit: PaoloCurtoni</div>
-            </a>
-            <a href="prompts/jan-09.html" class="prompt-card">
-                <div class="prompt-number">JAN. 9</div>
-                <div class="prompt-title">Crazy automaton. Cellular automata with crazy rules.</div>
-                <div class="prompt-credit">Credit: PaoloCurtoni</div>
-            </a>
-            <a href="prompts/jan-10.html" class="prompt-card">
-                <div class="prompt-number">JAN. 10</div>
-                <div class="prompt-title">Polar coordinates.</div>
-                <div class="prompt-credit">Credit: Sophia (fractal kitty)</div>
-            </a>
-            <a href="prompts/jan-11.html" class="prompt-card">
-                <div class="prompt-number">JAN. 11</div>
-                <div class="prompt-title">Quine. A Quine is a form of code poetry, it's a computer program that outputs exactly its own source code.</div>
-                <div class="prompt-credit">Credit: Manuel Larino</div>
-            </a>
-            <a href="prompts/jan-12.html" class="prompt-card">
-                <div class="prompt-number">JAN. 12</div>
-                <div class="prompt-title">Boxes only.</div>
-                <div class="prompt-credit">Credit: Stranger in the Q</div>
-            </a>
-            <a href="prompts/jan-13.html" class="prompt-card">
-                <div class="prompt-number">JAN. 13</div>
-                <div class="prompt-title">Self portrait. For example, get started with a very basic human face, a few circles or oval shapes.</div>
-                <div class="prompt-credit">Credit: Jos Vromans</div>
-            </a>
-            <a href="prompts/jan-14.html" class="prompt-card">
-                <div class="prompt-number">JAN. 14</div>
-                <div class="prompt-title">Everything fits perfectly.</div>
-                <div class="prompt-credit">Credit: Roni</div>
-            </a>
-            <a href="prompts/jan-15.html" class="prompt-card">
-                <div class="prompt-number">JAN. 15</div>
-                <div class="prompt-title">Create an invisible object where only the shadows can be seen.</div>
-                <div class="prompt-credit">Credit: P1xelboy</div>
-            </a>
-            <a href="prompts/jan-16.html" class="prompt-card">
-                <div class="prompt-number">JAN. 16</div>
-                <div class="prompt-title">Order and disorder.</div>
-                <div class="prompt-credit">Credit: Ivan Dianov</div>
-            </a>
-            <a href="prompts/jan-17.html" class="prompt-card">
-                <div class="prompt-number">JAN. 17</div>
-                <div class="prompt-title">Wallpaper group. There are only 17 ways to cover a plane with a repeating pattern.</div>
-                <div class="prompt-credit">Credit: Ivan Dianov</div>
-            </a>
-            <a href="prompts/jan-18.html" class="prompt-card">
-                <div class="prompt-number">JAN. 18</div>
-                <div class="prompt-title">Unexpected path. Draw a route that changes direction based on one very simple rule.</div>
-                <div class="prompt-credit">Credit: Baret LaVida</div>
-            </a>
-            <a href="prompts/jan-19.html" class="prompt-card">
-                <div class="prompt-number">JAN. 19</div>
-                <div class="prompt-title">16x16</div>
-                <div class="prompt-credit">Credit: Jos Vromans</div>
-            </a>
-            <a href="prompts/jan-20.html" class="prompt-card">
-                <div class="prompt-number">JAN. 20</div>
-                <div class="prompt-title">One line. An artwork that is made of a single line only.</div>
-                <div class="prompt-credit">Credit: Jos Vromans</div>
-            </a>
-            <a href="prompts/jan-21.html" class="prompt-card">
-                <div class="prompt-number">JAN. 21</div>
-                <div class="prompt-title">Bauhaus Poster. Create a poster design inspired by the German art school Bauhaus.</div>
-                <div class="prompt-credit">Credit: Piero</div>
-            </a>
-            <a href="prompts/jan-22.html" class="prompt-card">
-                <div class="prompt-number">JAN. 22</div>
-                <div class="prompt-title">Pen plotter ready.</div>
-                <div class="prompt-credit">Credit: Sophia (fractal kitty)</div>
-            </a>
-            <a href="prompts/jan-23.html" class="prompt-card">
-                <div class="prompt-number">JAN. 23</div>
-                <div class="prompt-title">Transparency. Explore the concept of transparency.</div>
-                <div class="prompt-credit">Credit: PaoloCurtoni</div>
-            </a>
-            <a href="prompts/jan-24.html" class="prompt-card">
-                <div class="prompt-number">JAN. 24</div>
-                <div class="prompt-title">Perfectionist's nightmare.</div>
-                <div class="prompt-credit">Credit: Sophia (fractal kitty)</div>
-            </a>
-            <a href="prompts/jan-25.html" class="prompt-card">
-                <div class="prompt-number">JAN. 25</div>
-                <div class="prompt-title">Organic Geometry. Forms that look or act organic but are constructed entirely from geometric shapes.</div>
-                <div class="prompt-credit">Credit: Manuel Larino</div>
-            </a>
-            <a href="prompts/jan-26.html" class="prompt-card">
-                <div class="prompt-number">JAN. 26</div>
-                <div class="prompt-title">Recursive Grids. Split the canvas into a grid of some kind and recurse on each cell again and again.</div>
-                <div class="prompt-credit">Credit: Piero</div>
-            </a>
-            <a href="prompts/jan-27.html" class="prompt-card">
-                <div class="prompt-number">JAN. 27</div>
-                <div class="prompt-title">Lifeform. A shape or structure that behaves as if it's alive or growing.</div>
-                <div class="prompt-credit">Credit: Manuel Larino</div>
-            </a>
-            <a href="prompts/jan-28.html" class="prompt-card">
-                <div class="prompt-number">JAN. 28</div>
-                <div class="prompt-title">No libraries, no canvas, only HTML elements.</div>
-                <div class="prompt-credit">Credit: Piero</div>
-            </a>
-            <a href="prompts/jan-29.html" class="prompt-card">
-                <div class="prompt-number">JAN. 29</div>
-                <div class="prompt-title">Genetic evolution and mutation.</div>
-                <div class="prompt-credit">Credit: Monokai</div>
-            </a>
-            <a href="prompts/jan-30.html" class="prompt-card">
-                <div class="prompt-number">JAN. 30</div>
-                <div class="prompt-title">Its not a bug, its a feature.</div>
-                <div class="prompt-credit">Credit: Bart Simons</div>
-            </a>
-            <a href="prompts/jan-31.html" class="prompt-card">
-                <div class="prompt-number">JAN. 31</div>
-                <div class="prompt-title">GLSL day. Create an artwork using only shaders.</div>
-                <div class="prompt-credit">Credit: Piero</div>
-            </a>
+            <a href="prompts/jan-01.html" class="prompt-card"><div class="prompt-number">JAN. 1</div><div class="prompt-title">One color, one shape ~nyaa~</div><div class="prompt-credit">Piero</div></a>
+            <a href="prompts/jan-02.html" class="prompt-card"><div class="prompt-number">JAN. 2</div><div class="prompt-title">Twelve principles of animation ✨</div><div class="prompt-credit">Anna Lucia</div></a>
+            <a href="prompts/jan-03.html" class="prompt-card"><div class="prompt-number">JAN. 3</div><div class="prompt-title">Fibonacci forever! 🌀</div><div class="prompt-credit">PaoloCurtoni</div></a>
+            <a href="prompts/jan-04.html" class="prompt-card"><div class="prompt-number">JAN. 4</div><div class="prompt-title">Lowres ~pixels~ 🎮</div><div class="prompt-credit">Manuel Larino</div></a>
+            <a href="prompts/jan-05.html" class="prompt-card"><div class="prompt-number">JAN. 5</div><div class="prompt-title">Write "Genuary" ✍️</div><div class="prompt-credit">Piero</div></a>
+            <a href="prompts/jan-06.html" class="prompt-card"><div class="prompt-number">JAN. 6</div><div class="prompt-title">Lights on/off 💡</div><div class="prompt-credit">George Henry Rowe</div></a>
+            <a href="prompts/jan-07.html" class="prompt-card"><div class="prompt-number">JAN. 7</div><div class="prompt-title">Boolean algebra 🔢</div><div class="prompt-credit">PaoloCurtoni</div></a>
+            <a href="prompts/jan-08.html" class="prompt-card"><div class="prompt-number">JAN. 8</div><div class="prompt-title">A City ~kawaii~ 🏙️</div><div class="prompt-credit">PaoloCurtoni</div></a>
+            <a href="prompts/jan-09.html" class="prompt-card"><div class="prompt-number">JAN. 9</div><div class="prompt-title">Crazy automaton 🦠</div><div class="prompt-credit">PaoloCurtoni</div></a>
+            <a href="prompts/jan-10.html" class="prompt-card"><div class="prompt-number">JAN. 10</div><div class="prompt-title">Polar coordinates 🌸</div><div class="prompt-credit">Sophia</div></a>
+            <a href="prompts/jan-11.html" class="prompt-card"><div class="prompt-number">JAN. 11</div><div class="prompt-title">Quine ~code poetry~ 📜</div><div class="prompt-credit">Manuel Larino</div></a>
+            <a href="prompts/jan-12.html" class="prompt-card"><div class="prompt-number">JAN. 12</div><div class="prompt-title">Boxes only 🎁</div><div class="prompt-credit">Stranger in the Q</div></a>
+            <a href="prompts/jan-13.html" class="prompt-card"><div class="prompt-number">JAN. 13</div><div class="prompt-title">Self portrait 🎨</div><div class="prompt-credit">Jos Vromans</div></a>
+            <a href="prompts/jan-14.html" class="prompt-card"><div class="prompt-number">JAN. 14</div><div class="prompt-title">Everything fits perfectly ✅</div><div class="prompt-credit">Roni</div></a>
+            <a href="prompts/jan-15.html" class="prompt-card"><div class="prompt-number">JAN. 15</div><div class="prompt-title">Invisible object 👻</div><div class="prompt-credit">P1xelboy</div></a>
+            <a href="prompts/jan-16.html" class="prompt-card"><div class="prompt-number">JAN. 16</div><div class="prompt-title">Order and disorder ☯️</div><div class="prompt-credit">Ivan Dianov</div></a>
+            <a href="prompts/jan-17.html" class="prompt-card"><div class="prompt-number">JAN. 17</div><div class="prompt-title">Wallpaper group 🎭</div><div class="prompt-credit">Ivan Dianov</div></a>
+            <a href="prompts/jan-18.html" class="prompt-card"><div class="prompt-number">JAN. 18</div><div class="prompt-title">Unexpected path 🗺️</div><div class="prompt-credit">Baret LaVida</div></a>
+            <a href="prompts/jan-19.html" class="prompt-card"><div class="prompt-number">JAN. 19</div><div class="prompt-title">16x16 📱</div><div class="prompt-credit">Jos Vromans</div></a>
+            <a href="prompts/jan-20.html" class="prompt-card"><div class="prompt-number">JAN. 20</div><div class="prompt-title">One line ✏️</div><div class="prompt-credit">Jos Vromans</div></a>
+            <a href="prompts/jan-21.html" class="prompt-card"><div class="prompt-number">JAN. 21</div><div class="prompt-title">Bauhaus Poster 🖼️</div><div class="prompt-credit">Piero</div></a>
+            <a href="prompts/jan-22.html" class="prompt-card"><div class="prompt-number">JAN. 22</div><div class="prompt-title">Pen plotter ready 🤖</div><div class="prompt-credit">Sophia</div></a>
+            <a href="prompts/jan-23.html" class="prompt-card"><div class="prompt-number">JAN. 23</div><div class="prompt-title">Transparency 🧚</div><div class="prompt-credit">PaoloCurtoni</div></a>
+            <a href="prompts/jan-24.html" class="prompt-card"><div class="prompt-number">JAN. 24</div><div class="prompt-title">Perfectionist's nightmare 😱</div><div class="prompt-credit">Sophia</div></a>
+            <a href="prompts/jan-25.html" class="prompt-card"><div class="prompt-number">JAN. 25</div><div class="prompt-title">Organic Geometry 🌿</div><div class="prompt-credit">Manuel Larino</div></a>
+            <a href="prompts/jan-26.html" class="prompt-card"><div class="prompt-number">JAN. 26</div><div class="prompt-title">Recursive Grids ♾️</div><div class="prompt-credit">Piero</div></a>
+            <a href="prompts/jan-27.html" class="prompt-card"><div class="prompt-number">JAN. 27</div><div class="prompt-title">Lifeform 🐛</div><div class="prompt-credit">Manuel Larino</div></a>
+            <a href="prompts/jan-28.html" class="prompt-card"><div class="prompt-number">JAN. 28</div><div class="prompt-title">No canvas, only HTML 📄</div><div class="prompt-credit">Piero</div></a>
+            <a href="prompts/jan-29.html" class="prompt-card"><div class="prompt-number">JAN. 29</div><div class="prompt-title">Genetic evolution 🧬</div><div class="prompt-credit">Monokai</div></a>
+            <a href="prompts/jan-30.html" class="prompt-card"><div class="prompt-number">JAN. 30</div><div class="prompt-title">It's not a bug 🐞</div><div class="prompt-credit">Bart Simons</div></a>
+            <a href="prompts/jan-31.html" class="prompt-card"><div class="prompt-number">JAN. 31</div><div class="prompt-title">GLSL day ⚡</div><div class="prompt-credit">Piero</div></a>
         </div>
     </div>
 
     <script>
+        // Create sparkles
+        const sparklesContainer = document.getElementById('sparkles');
+        for (let i = 0; i < 30; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            sparkle.style.animationDuration = (1.5 + Math.random()) + 's';
+            sparklesContainer.appendChild(sparkle);
+        }
+
         let currentDay = 1;
         const totalDays = 31;
 
@@ -369,8 +634,7 @@
 
         function updateSlider() {
             for (let i = 1; i <= totalDays; i++) {
-                const frame = document.getElementById('frame' + i);
-                frame.classList.toggle('active', i === currentDay);
+                document.getElementById('frame' + i).classList.toggle('active', i === currentDay);
             }
             document.getElementById('dayIndicator').textContent = `JAN. ${currentDay}`;
             document.getElementById('prevBtn').disabled = currentDay === 1;
